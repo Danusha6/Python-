@@ -11,4 +11,18 @@ def on_select(event):
 
 #Create a function that give title to the page
 root = tk.Tk()
-root.title("Combobox Example")   
+root.title("Combobox Example") 
+
+#Create a static array of items
+items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+
+#Create a widget and connect it with the array
+combo_box = ttk.Combobox(root, values=items)
+
+#Bind the combobox object with an event function
+combo_box.bind("<<ComboboxSelected>>", on_select)
+
+combo_box.pack()
+
+#This makes the root window to be open unless said so
+root.mainloop()
